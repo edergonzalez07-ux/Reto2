@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biblioteca de Muskiz — Comics</title>
+  <link rel="icon" href="img/logo_reto1-removebg-preview.png" />
+  <link rel="stylesheet" href="css/books.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>COMICS</h1>
+
+    <section class="grid">
+      <article class="card">
+        <img src="img/comic1.webp" alt="Portada del libro 1" />
+        <h3 class="title">Un cadáver en Baker Street</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic2.webp" alt="Portada del libro 2" />
+        <h3 class="title">Tomöe</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic3.webp" alt="Portada del libro 3" />
+        <h3 class="title">Podeis besaros</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic4.webp" alt="Portada del libro 4" />
+        <h3 class="title">Kokoro</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic5.webp" alt="Portada del libro 5" />
+        <h3 class="title">La tienda que abre al llover</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic6.webp" alt="Portada del libro 6" />
+        <h3 class="title">Éramos el enemigo</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic7.webp" alt="Portada del libro 7" />
+        <h3 class="title">Los pasajeros del tren de Hankyu</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic8.webp" alt="Portada del libro 8" />
+        <h3 class="title">La última guardia</h3>
+      </article>
+
+      <article class="card">
+        <img src="img/comic9.webp" alt="Portada del libro 9" />
+        <h3 class="title">Cuando brillan las estrellas</h3>
+      </article>
+    </section>
+    <p></p>
+    <article class="volver">
+      <h3><a href="catalog.html">VOLVER</a></h3>
+    </article>
+  </main>
+  <script>
+    // Transición suave entre páginas
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in al cargar la página
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 10);
+
+      // Fade out al cambiar de página
+      const links = document.querySelectorAll('a[href^="./"], a[href*=".html"], a[href^="/"]');
+      links.forEach(link => {
+        // Excluir descargas y enlaces externos
+        if (!link.hasAttribute('download') && link.hostname === window.location.hostname) {
+          link.addEventListener('click', function(e) {
+            const href = this.href;
+            
+            // Si es un enlace a otra página, no es el mismo archivo
+            if (!href.includes('#') && !href.includes(window.location.pathname)) {
+              e.preventDefault();
+              document.body.classList.add('page-exit');
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

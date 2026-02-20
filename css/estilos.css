@@ -1,0 +1,187 @@
+/* Estilos básicos para la galería de portadas */
+:root{
+  --bg:#F6F5F3;
+  --surface:#FFFFFF;
+  --text:#222;
+  --muted:#6B6B66;
+  --accent:#8FA3AD;
+  --max-width:980px;
+}
+
+html,body{
+    height:100%;
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    color:var(--text)
+}
+
+/* Transición de página */
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.page-exit {
+    opacity: 0;
+}
+
+/* Estilos Header */
+.header-inner{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+}
+
+/* Estilos Menú al pasar el cursor */
+.color a:hover{
+    color: var(--surface);
+    background-color: var(--text);
+}
+
+/* Estilos Logo y Nombre */
+.brand{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+}
+
+/* Estilos Enlaces Menú */
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    padding:0.25rem 0.5rem;
+    border-radius:6px;
+}
+/* Estilos Enlace Activo Menú */
+nav a.active{
+    background:var(--accent);
+    font-weight:600;
+    color: #FFFFFF;
+}
+
+/* Estilos Cuadros Texto */
+.hero{
+    max-width:var(--max-width);
+    margin:1.25rem auto;
+    padding:1.75rem;
+    background:var(--surface);
+    border-radius:10px;
+}
+
+/* Estilos Títulos Cuadros Texto */
+.hero h2{
+    margin:0 0 0.5rem
+}
+
+/* Estilos Enlaces Cuadros Texto */
+.hero a{
+    color: red;
+    text-decoration:none;
+}
+
+/* Estilos Enlaces Cuadros Texto al pasar el cursor */
+.hero a:hover{
+    color: rgb(175, 0, 0);
+}
+
+/* Estilos Mapa */
+.mapa {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos Sección Información de la biblioteca */
+.features{
+    max-width:var(--max-width);
+    margin:1rem auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem;
+    padding:0 1rem
+}
+
+/* Estilos Títulos Sección Información de la biblioteca */
+.features h3{
+    text-align: center;
+    color: black;
+}
+
+/* Estilos Artículos Sección Información de la biblioteca */
+.features article{
+    background:var(--surface);
+    padding:1rem;
+    border-radius:10px;
+    color:var(--muted)
+}
+
+/* Estilos Footer */
+footer{
+    max-width:var(--max-width)
+    ;margin:1.5rem auto;
+    padding:1rem;
+    text-align:center;
+    color:var(--muted)
+}
+
+/* Estilos Dirección en el Footer */
+address{
+    font-style:normal;
+    margin-bottom:0.5rem
+}
+
+/* Estilos Enlace a otras páginas */
+.explore{
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+/* Estilos Enlace a otras páginas al pasar el cursor */
+.explore:hover{
+    color: rgb(175, 0, 0);
+}
+
+/* Responsive tablets */
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive Móviles */
+@media (max-width: 600px) {
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    nav {
+        justify-content: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biblioteca de Muskiz — Sobre</title>
+  <link rel="icon" href="img/logo_reto1-removebg-preview.png" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"><img src="img/logo_reto1-removebg-preview.png" alt="Portada de la Biblioteca" width="60" height="60"></span>
+        <div>
+          <h1>Biblioteca de Muskiz</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Menú principal" class="color">
+        <a href="index.html">Inicio</a>
+        <span></span>
+        <a href="about.html" class="active">Quiénes Somos</a>
+        <span></span>
+        <a href="catalog.html">Catálogo</a>
+        <span></span>
+        <a href="visit.html">Visítanos</a>
+        <span></span>
+        <a href="formulario.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>🕰️  Nuestra historia</h2>
+      <p>La Biblioteca Municipal de Muskiz es un espacio público dedicado a la promoción de la lectura, el acceso a la información y la difusión de la cultura.</p>
+      <p>Nuestro objetivo es ofrecer a la ciudadanía un servicio de calidad, adaptado a las necesidades de cada usuario, con recursos tanto físicos como digitales.</p>
+      <p>Contamos con un amplio fondo bibliográfico, zona infantil y juvenil, acceso gratuito a Internet, y un calendario de actividades culturales que fomentan el aprendizaje y la convivencia.</p>
+      <p>Creemos que la lectura es una herramienta esencial para el desarrollo personal y colectivo, y trabajamos día a día para que la biblioteca sea un punto de encuentro abierto, inclusivo y participativo.</p>
+  </section>
+  
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>🎯  Misión y valores</h2>
+      <p>Nuestra misión es garantizar el acceso libre y gratuito a la información, fomentar el gusto por la lectura y promover la cultura como herramienta de crecimiento personal y colectivo.</p>
+      <p>Nos guiamos por valores como la igualdad de oportunidades, la inclusión, la sostenibilidad y la innovación.</p>
+      <p>Creemos en una biblioteca abierta a todos los públicos, donde cada persona pueda encontrar su espacio para aprender, descubrir y disfrutar.</p>
+  </section>
+
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>👥  Nuestro equipo</h2>
+      <p>Detrás de cada libro, de cada actividad y de cada recomendación hay un equipo comprometido con la lectura y la cultura.</p>
+      <p>Nuestro personal trabaja día a día para ofrecer un servicio cercano, profesional y adaptado a las necesidades de los usuarios.</p>
+      <p>Además, contamos con la colaboración de voluntarios y entidades locales que enriquecen la vida cultural de la biblioteca con su entusiasmo y participación.</p>
+  </section>
+
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>🏠  Instalaciones y espacios</h2>
+      <p>La biblioteca dispone de espacios pensados para todos los públicos y necesidades.</p>
+      <p>Contamos con una sala de lectura luminosa y tranquila, una zona infantil y juvenil llena de color, un área multimedia con ordenadores y acceso gratuito a Internet, y una sala polivalente donde se celebran talleres, cuentacuentos y exposiciones.</p>
+      <p>Todo está diseñado para ofrecer comodidad, accesibilidad y un ambiente propicio para la concentración y el disfrute.</p>
+  </section>
+
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>📖  Colecciones y recursos</h2>
+      <p>Nuestro fondo bibliográfico incluye miles de ejemplares que abarcan desde literatura clásica hasta las últimas novedades editoriales.</p>
+      <p>Ofrecemos libros, revistas, cómics, películas, música y audiolibros, además de recursos digitales a través de plataformas como eLiburutegia.</p>
+      <p>También ponemos a disposición de nuestros usuarios bases de datos, prensa digital y materiales de apoyo educativo y cultural.</p>
+  </section>
+
+  <section id="contenido" class="contenido">
+    <article>
+      <h2>📢  Lo que opinan nuestros usuarios</h2>
+      <p>“La biblioteca es mi lugar favorito del pueblo.”</p>
+      <p>“Siempre encuentro algo nuevo que leer y el personal es encantador.”</p>
+      <p>“Me encanta venir con mis hijos; es un espacio acogedor y lleno de actividades.”</p>
+      <p>Opiniones como estas son el motor que nos impulsa a seguir mejorando.</p>
+      <p>Creemos que la mejor manera de crecer es escuchar a quienes dan vida a este espacio: nuestros lectores y lectoras.</p>
+  </section>
+
+  <footer>
+    <div>
+      <address>Biblioteca de Muskiz — C. la Cendeja, 29</address>
+      <p>© 2025 Biblioteca de Muskiz — Sobre</p>
+    </div>
+  </footer>
+  <script>
+    // Transición suave entre páginas
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in al cargar la página
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 10);
+
+      // Fade out al cambiar de página
+      const links = document.querySelectorAll('a[href^="./"], a[href*=".html"], a[href^="/"]');
+      links.forEach(link => {
+        // Excluir descargas y enlaces externos
+        if (!link.hasAttribute('download') && link.hostname === window.location.hostname) {
+          link.addEventListener('click', function(e) {
+            const href = this.href;
+            
+            // Si es un enlace a otra página, no es el mismo archivo
+            if (!href.includes('#') && !href.includes(window.location.pathname)) {
+              e.preventDefault();
+              document.body.classList.add('page-exit');
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

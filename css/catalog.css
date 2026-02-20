@@ -1,0 +1,164 @@
+/* Estilos básicos para la galería de portadas */
+:root{
+    --bg:#F6F5F3;
+    --surface:#FFF;
+    --text:#222;
+    --muted:#6B6B66;
+    --accent:#8FA3AD;
+    --max-width:980px;
+}
+
+html,body{
+    height: 100%;
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* Estilos Header */
+.header-inner{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+}
+
+/* Estilos Menú al pasar el cursor */
+.color a:hover{
+    color: var(--surface);
+    background-color: var(--text);
+}
+
+/* Estilos Logo y Nombre */
+.brand{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+}
+
+/* Estilos Enlaces Menú */
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    padding:0.25rem 0.5rem;
+    border-radius:6px;
+}
+
+/* Estilos Enlace Activo Menú */
+nav a.active{
+    background:var(--accent);
+    font-weight:600;
+    color: #FFFFFF;
+}
+
+/* Estilos Cuadros Texto Catalogo */
+.catalog{
+    max-width:var(--max-width);
+    margin:1.25rem auto;
+    padding:1.25rem;
+    background:var(--surface);
+    border-radius:10px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Estilos Footer */
+footer{
+    max-width:var(--max-width);
+    margin:1.5rem auto;
+    padding:1rem;
+    text-align:center;
+    color:var(--muted)
+}
+
+/* Estilos Secciones Libros */
+.libro{
+    width: 800px;
+    height: 100px;
+    background-color: #b5b5b5a6;
+    border-radius: 5px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    padding: 0px 20px;
+    margin-left: 7%;
+    margin-bottom: 10px;
+}
+
+/* Estilos Efecto Hover en Secciones Libros */
+.libro:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+    background-color: var(--muted);
+}
+
+/* Estilos Enlaces*/
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive Tablets */
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .catalog {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .libro {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+}
+
+/* Responsive Móviles */
+@media (max-width: 600px) {
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .catalog {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .libro {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
+}

@@ -1,0 +1,115 @@
+/* Estilos básicos para la galería de portadas */
+:root{
+  --gap: 1rem;
+  --card-bg: #fff;
+  --card-border: #e0e0e0;
+  --title-color: #222;
+  --page-bg: #f7f8fa;
+}
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--page-bg);
+  color:var(--title-color);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Contenedor principal */
+.container{
+  max-width:1100px;
+  margin:2rem auto;
+  padding:0 1rem;
+}
+
+/* Título de la página */
+h1{
+  margin:0 0 1.25rem;
+  font-size:3.5rem;
+  text-align:center;
+}
+
+/* Estilos Sección Artículos */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+/* Estilos Libros */
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:8px;
+  padding:0.75rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  transition:transform .12s ease, box-shadow .12s ease;
+  text-align:center;
+}
+
+/* Efecto hover Libroa */
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Estilos Imagenes Libros */
+.card img{
+  width:100%;
+  height:auto;
+  max-width:220px;
+  border-radius:4px;
+  object-fit:cover;
+  display:block;
+  margin-bottom:0.65rem;
+}
+
+/* Estilos Título Libros */
+.title{
+  margin:0;
+  font-size:1rem;
+  line-height:1.2;
+  color:var(--title-color);
+  word-wrap:break-word;
+}
+
+/* Estilos Botón Volver */
+.volver a{
+  width: 100px;
+  height: 33px;
+  background-color: #b5b5b5a6;
+  border-radius: 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  font-weight: 700;
+  font-size: 15px;
+  margin-left: 46%;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+/* Responsive tablets */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    .contenido {
+        margin: 10px;
+    }
+}
+
+/* Responsive móviles */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 22px;
+    }
+    .contenido {
+        padding: 15px;
+    }
+}

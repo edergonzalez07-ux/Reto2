@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biblioteca de Muskiz — Contacto</title>
+  <link rel="icon" href="img/logo_reto1-removebg-preview.png" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"><img src="img/logo_reto1-removebg-preview.png" alt="Portada de la Biblioteca" width="60" height="60"></span>
+        <div>
+          <h1>Biblioteca de Muskiz</h1>
+        </div>
+      </div>
+
+      <nav aria-label="Menú principal" class="color">
+        <a href="index.html">Inicio</a>
+        <span></span>
+        <a href="about.html">Quiénes Somos</a>
+        <span></span>
+        <a href="catalog.html">Catálogo</a>
+        <span></span>
+        <a href="visit.html">Visítanos</a>
+        <span></span>
+        <a href="formulario.html" class="active">Contacto</a>
+      </nav>
+  </header>
+
+  <section id="contacto" class="contact">
+    <article>
+      <h2>Contacto</h2>
+      <main>
+        <h1>Formulario de incidencia</h1>
+
+        <form id="formContacto" action="php/enviar.php" method="POST" enctype="multipart/form-data">
+          <label for="tipo">Tipo de incidencia</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">-- seleccionar --</option>
+            <option value="dañado antes">Libro dañado antes del préstamo</option>
+            <option value="dañado durante">Libro dañado durante el préstamo</option>
+            <option value="perdido">Libro perdido o extraviado</option>
+            <option value="error de préstamo">Error de préstamo</option>
+            <option value="devolución">Problemas con fecha de devolución</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <label for="tipo_otro">Si eliges "Otro", escribe aquí</label>
+          <input id="tipo_otro" name="tipo_otro" type="text" placeholder="Descripción (si procede)">
+
+          <label for="isbn">ISBN del libro</label>
+          <input id="isbn" name="isbn" type="text" required placeholder="Ej: 978-84-376-0494-7">
+
+          <label for="nombre">Tu nombre</label>
+
+          <input id="nombre" name="nombre" type="text" required>
+
+          <label for="email">Tu email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="mensaje">Descripción del problema</label>
+          <textarea id="mensaje" name="mensaje" rows="4" cols="40" required></textarea>
+          
+          <label for="foto">Adjuntar foto (opcional)</label>
+          <input id="foto" name="foto" type="file" accept="image/*">
+
+          <div class="acciones">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </main>
+
+      <section>
+        <h3>Correo</h3>
+        <p><a href="mailto:info@bibliotecacentral.example">bibmus@gmail.com</a></p>
+      </section>
+
+      <section>
+        <h3>Teléfono</h3>
+        <p>946 70 72 75</p>
+      </section>
+
+      <section>
+        <h3>WhatsApp</h3>
+        <p>688 817 884</p>
+      </section>
+    </article>
+  </section>
+
+  <footer>
+    <div>
+      <address>Biblioteca de Muskiz — C. la Cendeja, 29</address>
+      <p>© 2025 Biblioteca de Muskiz — Contacto</p>
+    </div>
+  </footer>
+  <script>
+    // Transición suave entre páginas
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in al cargar la página
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 10);
+
+      // Fade out al cambiar de página
+      const links = document.querySelectorAll('a[href^="./"], a[href*=".html"], a[href^="/"]');
+      links.forEach(link => {
+        // Excluir descargas y enlaces externos
+        if (!link.hasAttribute('download') && link.hostname === window.location.hostname) {
+          link.addEventListener('click', function(e) {
+            const href = this.href;
+            
+            // Si es un enlace a otra página, no es el mismo archivo
+            if (!href.includes('#') && !href.includes(window.location.pathname)) {
+              e.preventDefault();
+              document.body.classList.add('page-exit');
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        }
+      });
+    });
+  </script>
+<script src="js/validacion.js"></script>
+</html>

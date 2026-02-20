@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="css/juego.css">
+</head>
+<body>
+
+<h1>Juego de Memoria</h1>
+<p>Encuentra las parejas</p>
+
+<div id="tablero"></div>
+
+<script>
+const simbolos = ['📘','📕','📗','📙','📓','📔','📒','📚'];
+let cartas = [...simbolos, ...simbolos];
+cartas.sort(() => 0.5 - Math.random());
+
+const tablero = document.getElementById("tablero");
+let primera = null;
+let segunda = null;
+let bloqueo = false;
+
+cartas.forEach(simbolo => {
+    const div = document.createElement("div");
+    div.classList.add("carta");
+    div.dataset.simbolo = simbolo;
+    div.innerHTML = "";
+    tablero.appendChild(div);
+
+    div.addEventListener("click", function() {
+        if (bloqueo || this.classList.contains("descubierta")) return;
+
+        this.innerHTML = simbolo;
+        this.classList.add("descubierta");
+
+        if (!primera) {
+            primera = this;
+        } else {
+            segunda = this;
+            bloqueo = true;
+
+            if (primera.dataset.simbolo === segunda.dataset.simbolo) {
+                primera = null;
+                segunda = null;
+                bloqueo = false;
+            } else {
+                setTimeout(() => {
+                    primera.innerHTML = "";
+                    segunda.innerHTML = "";
+                    primera.classList.remove("descubierta");
+                    segunda.classList.remove("descubierta");
+                    primera = null;
+                    segunda = null;
+                    bloqueo = false;
+                }, 800);
+            }
+        }
+    });
+});
+</script>
+  <script>
+    // Transición suave entre páginas
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fade in al cargar la página
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 10);
+
+      // Fade out al cambiar de página
+      const links = document.querySelectorAll('a[href^="./"], a[href*=".html"], a[href^="/"]');
+      links.forEach(link => {
+        // Excluir descargas y enlaces externos
+        if (!link.hasAttribute('download') && link.hostname === window.location.hostname) {
+          link.addEventListener('click', function(e) {
+            const href = this.href;
+            
+            // Si es un enlace a otra página, no es el mismo archivo
+            if (!href.includes('#') && !href.includes(window.location.pathname)) {
+              e.preventDefault();
+              document.body.classList.add('page-exit');
+              setTimeout(() => {
+                window.location.href = href;
+              }, 500);
+            }
+          });
+        }
+      });
+    });
+  </script>
+    <article class="volver">
+      <h3><a href="index.html">VOLVER</a></h3>
+    </article>
+</body>
+</html>

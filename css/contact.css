@@ -1,0 +1,165 @@
+/* Estilos básicos para la galería de portadas */
+:root{
+    --bg:#F6F5F3;
+    --surface:#FFF;
+    --text:#222;
+    --muted:#6B6B66;
+    --accent:#8FA3AD;
+    --max-width:980px
+}
+
+html,body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    background:var(--bg);
+    color:var(--text)
+}
+
+/* Estilos Header */
+.header-inner{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+}
+
+/* Estilos Menú al pasar el cursor */
+.color a:hover{
+    color: var(--surface);
+    background-color: var(--text);
+}
+
+/* Estilos Logo y Nombre */
+.brand{
+    display:flex;
+    align-items:center;
+    gap:0.75rem
+}
+
+/* Estilos Enlaces Menú */
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    padding:0.25rem 0.5rem;
+    border-radius:6px
+}
+
+/* Estilos Enlace Activo Menú */
+nav a.active{
+    background:var(--accent);
+    font-weight:600;
+    color: #FFFFFF;
+}
+
+/* Estilos Cuadro Texto */
+.contact{
+    max-width:var(--max-width);
+    margin:1.25rem auto;
+    padding:1.25rem;
+    background:var(--surface);
+    border-radius:10px
+}
+
+/* Estilos Enlaces Cuadro Texto */
+.contact a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600
+}
+
+/* Estilos Footer */
+footer{
+    max-width:var(--max-width);
+    margin:1.5rem auto;
+    padding:1rem;
+    text-align:center;
+    color:var(--muted)
+}
+
+/* Estilos Formulario */
+form { 
+    display: block; 
+}
+
+/* Estilos Etiquetas Formulario */
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    color: #222;
+}
+
+/* Estilos Campos Formulario */
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+/* Estilos Botón Enviar Formulario */
+.acciones {
+    margin-top: 12px;
+}
+
+/* Estilos Botón Formulario */
+button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Estilos Botón Formulario al pasar el cursor */
+button:hover { 
+    background: var(--muted);
+}
+
+/* Responsive tablets */
+@media (max-width: 900px) {
+
+    .header-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive Móviles */
+@media (max-width: 600px) {
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    nav {
+        justify-content: center;
+        text-align: center;
+    }
+}

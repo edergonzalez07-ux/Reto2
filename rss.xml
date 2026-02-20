@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>Noticias Biblioteca</title>
+    <link>http://localhost/reto2_g2/</link>
+    <description>Novedades de libros y cómics</description>
+
+    <item>
+        <title>Nueva colección de novelas</title>
+        <link>http://localhost/reto2_g2/novelas.html</link>
+        <description>Hemos añadido nuevas novelas a nuestro catálogo.</description>
+    </item>
+
+    <item>
+        <title>Zona cómic ampliada</title>
+        <link>http://localhost/reto2_g2/comic.html</link>
+        <description>Nuevos cómics disponibles para lectura.</description>
+    </item>
+
+</channel>
+</rss>
