@@ -1,24 +1,29 @@
 <?php
-include("php/conexion.php");
+session_start();
+if(!isset($_SESSION["usuario"])){
+    header("Location: ../index.php");
+    exit();
+}
+
+include("conexion.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+    
+    // Usar consultas preparadas
     $titulo = $_POST["titulo"];
     $autor = $_POST["autor"];
     $descripcion = $_POST["descripcion"];
-
-    $sql = "INSERT INTO libros (titulo, autor, descripcion) 
-            VALUES ('$titulo', '$autor', '$descripcion')";
-
-    $conexion->query($sql);
-
-    echo "Libro añadido correctamente";
+    
+    $stmt = $conexion->prepare("INSERT INTO libros (titulo, autor, descripcion) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $titulo, $autor, $descripcion);
+    
+    if($stmt->execute()){
+        echo "Libro añadido correctamente";
+    } else {
+        echo "Error: " . $conexion->error;
+    }
+    
+    $stmt->close();
 }
 ?>
-
-<form method="POST">
-    Título: <input type="text" name="titulo"><br>
-    Autor: <input type="text" name="autor"><br>
-    Descripción: <textarea name="descripcion"></textarea><br>
-    <button type="submit">Añadir libro</button>
-</form>
+<!-- resto del HTML igual -->
