@@ -5,7 +5,10 @@ public class Main {
         Usuario[] usuarios = new Usuario[5];
         usuarios[0] = new Usuario(1, "Ander");
         usuarios[1] = new Usuario(2, "Eder");
-
+        usuarios[2] = new Usuario(3, "Marcos");
+        usuarios[3] = new Usuario(4, "Aitor García");
+        usuarios[4] = new Usuario(5, "Aitor Martín");
+        
         // Crear autores
         Autor[] autores = new Autor[10]; // dejamos hueco para altas
         autores[0] = new Autor(1, "Gabriel Garcia Márquez");
