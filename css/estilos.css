@@ -13,17 +13,7 @@ html,body{
     margin:0;
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
     background:var(--bg);
-    color:var(--text);
-}
-
-/* Transición de página */
-body {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-body.page-exit {
-    opacity: 0;
+    color:var(--text)
 }
 
 /* Estilos Header */
@@ -148,6 +138,19 @@ address{
     color: rgb(175, 0, 0);
 }
 
+/* Transición entre páginas */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive tablets */
 @media (max-width: 900px) {
 
@@ -185,3 +188,4 @@ address{
         text-align: center;
     }
 }
+

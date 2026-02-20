@@ -89,34 +89,10 @@
     </div>
   </footer>
   <script>
-    // Transición suave entre páginas
-    document.addEventListener('DOMContentLoaded', function() {
-      // Fade in al cargar la página
-      document.body.style.opacity = '0';
-      setTimeout(() => {
-        document.body.style.opacity = '1';
-      }, 10);
-
-      // Fade out al cambiar de página
-      const links = document.querySelectorAll('a[href^="./"], a[href*=".html"], a[href^="/"]');
-      links.forEach(link => {
-        // Excluir descargas y enlaces externos
-        if (!link.hasAttribute('download') && link.hostname === window.location.hostname) {
-          link.addEventListener('click', function(e) {
-            const href = this.href;
-            
-            // Si es un enlace a otra página, no es el mismo archivo
-            if (!href.includes('#') && !href.includes(window.location.pathname)) {
-              e.preventDefault();
-              document.body.classList.add('page-exit');
-              setTimeout(() => {
-                window.location.href = href;
-              }, 500);
-            }
-          });
-        }
-      });
+    document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
     });
   </script>
+
 </body>
 </html>

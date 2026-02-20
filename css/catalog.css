@@ -105,6 +105,19 @@ a{
     color: white;
 }
 
+/* Transición entre páginas */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Tablets */
 @media (max-width: 900px) {
 

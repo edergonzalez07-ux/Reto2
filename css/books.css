@@ -94,6 +94,19 @@ h1{
   text-decoration: none;
 }
 
+/* Transición entre páginas */
+
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive tablets */
 @media (max-width: 768px) {
     header {
