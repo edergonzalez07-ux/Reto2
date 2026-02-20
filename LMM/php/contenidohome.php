@@ -1,34 +1,3 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Biblioteca de Muskiz — Inicio</title>
-  <link rel="icon" href="img/logo_reto1-removebg-preview.png" />
-  <link rel="stylesheet" href="css/estilos.css" />
-</head>
-<body>
-  <header>
-    <div class="header-inner">
-      <div class="brand">
-        <span class="logo" aria-hidden="true"><img src="img/logo_reto1-removebg-preview.png" alt="Portada de la Biblioteca" width="60" height="60"></span>
-        <div>
-          <h1>Biblioteca de Muskiz</h1>
-        </div>
-      </div>
-
-      <nav aria-label="Menú principal" class="color">
-        <a href="index.html" class="active">Inicio</a>
-        <span></span>
-        <a href="about.html">Quiénes Somos</a>
-        <span></span>
-        <a href="catalog.html">Catálogo</a>
-        <span></span>
-        <a href="visit.html">Visítanos</a>
-        <span></span>
-        <a href="formulario.html">Contacto</a>
-    </div>
-  </header>
   <main>
     <section id="text" class="hero">
       <article>
@@ -133,16 +102,3 @@
       </article>
     </section>
   </main>
-  <footer>
-    <div class="footer-inner">
-      <address>Biblioteca de Muskiz — C. la Cendeja, 29</address>
-      <p>© 2025 Biblioteca de Muskiz — Todos los derechos reservados</p>
-    </div>
-  </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("page-loaded");
-    });
-  </script>
-</body>
-</html>
