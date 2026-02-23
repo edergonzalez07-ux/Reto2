@@ -9,7 +9,6 @@ include("conexion.php");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-    // Usar consultas preparadas
     $titulo = $_POST["titulo"];
     $autor = $_POST["autor"];
     $descripcion = $_POST["descripcion"];
@@ -26,4 +25,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $stmt->close();
 }
 ?>
-<!-- resto del HTML igual -->

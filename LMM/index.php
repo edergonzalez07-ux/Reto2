@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Procesar login si viene del formulario
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])){
     include("php/conexion.php");
     
@@ -38,7 +37,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])){
 
 <?php if(!isset($_SESSION["usuario"])): ?>
 
-<!-- ================= LOGIN MEJORADO ================= -->
 <section class="hero" style="text-align:center; padding:50px 20px;">
     <h2>Bienvenido a la Biblioteca de Muskiz</h2>
     <p>Inicia sesión para acceder a todo el contenido</p>
@@ -69,7 +67,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])){
 
 <?php else: ?>
 
-<!-- ================= WEB PRINCIPAL ================= -->
 <header>
   <div class="header-inner">
     <div class="brand">

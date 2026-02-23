@@ -82,7 +82,7 @@ footer{
 body {
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 1.4s ease, transform 1.4s ease;
 }
 
 body.page-loaded {

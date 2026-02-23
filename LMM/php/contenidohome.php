@@ -101,4 +101,10 @@
         <p>Clubes de lectura, talleres y charlas abiertas.</p>
       </article>
     </section>
+    <footer>
+    <div>
+      <address>Biblioteca de Muskiz — C. la Cendeja, 29</address>
+      <p>© 2025 Biblioteca de Muskiz — Sobre</p>
+    </div>
+  </footer>
   </main>
